@@ -3,6 +3,7 @@ import Home from "../screens/Home";
 import Settings from "../screens/Settings";
 import { MaterialIcons } from "@expo/vector-icons";
 import MainStack from "./MainStack";
+import { useState } from "react";
 const Tab = createMaterialBottomTabNavigator();
 
 export default function TabActions() {
