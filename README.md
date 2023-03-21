@@ -17,8 +17,8 @@ Struktur Folder:
 
 Target:
 
-- [ ] Memahami `react-native` dan `expo`
-- [ ] Install `expo-cli` & `expo init` & setup project mobile
+- [x] Memahami `react-native` dan `expo`
+- [x] Install `expo-cli` & `expo init` & setup project mobile
 - [ ] Mencoba component Text, View, Image, StyleSheet, Button, ScrollView, FlatList
 - [ ] Mencoba useState, useEffect dalam react-native
 - [ ] Hit API server yang sudah dibuat untuk mendapatkan data
@@ -28,8 +28,8 @@ Target:
 - [ ] Membuat min 2 Screen (Home, Detail)
 
 **Report:**
+> Hari ini saya mempelajari react-native dan sudah berhasil membuat react expo app dan me-run aplikasi menggunakan simulator xcode.
 
-...
 
 ## W2D3
 
