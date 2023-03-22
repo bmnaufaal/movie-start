@@ -1,4 +1,5 @@
-import { View, Text, Button } from "react-native";
+import { View } from "react-native";
+import { Text } from "react-native-paper";
 
 export default function Settings({ navigation }) {
   return (
