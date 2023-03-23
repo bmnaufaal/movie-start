@@ -1,0 +1,202 @@
+[
+  {
+    "title": "The Last Of Us",
+    "slug": "The-Last-Of-Us",
+    "synopsis": "After a global pandemic destroys civilization, a hardened survivor takes charge of a 14-year-old girl who may be humanity's last hope.",
+    "trailerUrl": "https://www.youtube.com/watch?v=uLtkt8BonwM&ab_channel=HBOMax",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BZGUzYTI3M2EtZmM0Yy00NGUyLWI4ODEtN2Q3ZGJlYzhhZjU3XkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_FMjpg_UX1000_.jpg",
+    "rating": 9,
+    "genreId": 3,
+    "authorId": 3
+  },
+  {
+    "title": "Arcane",
+    "slug": "Arcane",
+    "synopsis": "Set in utopian Piltover and the oppressed underground of Zaun, the story follows the origins of two iconic League champions-and the power that will tear them apart.",
+    "trailerUrl": "https://www.youtube.com/watch?v=fXmAurh012s&ab_channel=Netflix",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BYmU5OWM5ZTAtNjUzOC00NmUyLTgyOWMtMjlkNjdlMDAzMzU1XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX1000_.jpg",
+    "rating": 10,
+    "genreId": 1,
+    "authorId": 4
+  },
+  {
+    "title": "Love, Death & Robots",
+    "slug": "Love,-Death-&-Robots",
+    "synopsis": "A collection of animated short stories that span various genres including science fiction, fantasy, horror and comedy.",
+    "trailerUrl": "https://www.youtube.com/watch?v=wUFwunMKa4E&ab_channel=Netflix",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BYTNiYTNkNTAtYzE3ZS00ZDQ1LWEwZTYtZjI1NzYzMWJjY2U4XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg",
+    "rating": 10,
+    "genreId": 5,
+    "authorId": 5
+  },
+  {
+    "title": "Spider-Man: Into the Spider-Verse",
+    "slug": "Spider-Man:-Into-the-Spider-Verse",
+    "synopsis": "Teen Miles Morales becomes the Spider-Man of his universe, and must join with five spider-powered individuals from other dimensions to stop a threat for all realities.",
+    "trailerUrl": "https://www.youtube.com/watch?v=cqGjhVJWtEg&ab_channel=SonyPicturesEntertainment",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BMjMwNDkxMTgzOF5BMl5BanBnXkFtZTgwNTkwNTQ3NjM@._V1_FMjpg_UX1000_.jpg",
+    "rating": 8,
+    "genreId": 1,
+    "authorId": 4
+  },
+  {
+    "title": "Cyberpunk: Edgerunners",
+    "slug": "Cyberpunk:-Edgerunners",
+    "synopsis": "A Street Kid trying to survive in a technology and body modification-obsessed city of the future. Having everything to lose, he chooses to stay alive by becoming an Edgerunner, a Mercenary outlaw also known as a Cyberpunk.",
+    "trailerUrl": "https://www.youtube.com/watch?v=KvMY1uzSC1E&ab_channel=Netflix",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BMTQ0MGI4NTgtZTlkNy00YTU5LThjM2ItNDczMGFlZWY2ZWM3XkEyXkFqcGdeQXVyMTM3NDc1OTM2._V1_FMjpg_UX1000_.jpg",
+    "rating": 8,
+    "genreId": 5,
+    "authorId": 1
+  },
+  {
+    "title": "Castlevania",
+    "slug": "Castlevania",
+    "synopsis": "A vampire hunter fights to save a besieged city from an army of otherworldly creatures controlled by Dracula.",
+    "trailerUrl": "https://www.youtube.com/watch?v=L7iWXfZzEMc&ab_channel=Netflix",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BMjAzMjU2MjYzMl5BMl5BanBnXkFtZTgwNTQ4Nzk1NjM@._V1_FMjpg_UX1000_.jpg",
+    "rating": 8,
+    "genreId": 3,
+    "authorId": 2
+  },
+  {
+    "title": "Your Name.",
+    "slug": "Your-Name.",
+    "synopsis": "Two strangers find themselves linked in a bizarre way. When a connection forms, will distance be the only thing to keep them apart?",
+    "trailerUrl": "https://www.youtube.com/watch?v=NooIc3dMncc&ab_channel=ConvincingAnimeTrailers",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BODRmZDVmNzUtZDA4ZC00NjhkLWI2M2UtN2M0ZDIzNDcxYThjL2ltYWdlXkEyXkFqcGdeQXVyNTk0MzMzODA@._V1_FMjpg_UX1000_.jpg",
+    "rating": 8,
+    "genreId": 5,
+    "authorId": 2
+  },
+  {
+    "title": "Weathering with You",
+    "slug": "Weathering-with-You",
+    "synopsis": "A high-school boy who has run away to Tokyo befriends a girl who appears to be able to manipulate the weather.",
+    "trailerUrl": "https://www.youtube.com/watch?v=Q6iK6DjV_iE&t=1s&ab_channel=GKIDSFilms",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BNzE4ZDEzOGUtYWFjNC00ODczLTljOGQtZGNjNzhjNjdjNjgzXkEyXkFqcGdeQXVyNzE5ODMwNzI@._V1_FMjpg_UX1000_.jpg",
+    "rating": 8,
+    "genreId": 5,
+    "authorId": 4
+  },
+  {
+    "title": "Breaking Bad",
+    "slug": "Breaking-Bad",
+    "synopsis": "A chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine with a former student in order to secure his family's future.",
+    "trailerUrl": "https://www.youtube.com/watch?v=2gTC4uWP3_Y&ab_channel=Netflix",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BYTU3NWI5OGMtZmZhNy00MjVmLTk1YzAtZjA3ZDA3NzcyNDUxXkEyXkFqcGdeQXVyODY5Njk4Njc@._V1_FMjpg_UX1000_.jpg",
+    "rating": 8,
+    "genreId": 1,
+    "authorId": 5
+  },
+  {
+    "title": "Better Call Saul",
+    "slug": "Better-Call-Saul",
+    "synopsis": "The trials and tribulations of criminal lawyer Jimmy McGill in the years leading up to his fateful run-in with Walter White and Jesse Pinkman.",
+    "trailerUrl": "https://www.youtube.com/watch?v=HN4oydykJFc&ab_channel=StillWatchingNetflix",
+    "imgUrl": "https://flxt.tmsimg.com/assets/p13837077_b_v8_aa.jpg",
+    "rating": 8,
+    "genreId": 1,
+    "authorId": 1
+  },
+  {
+    "title": "Game of Thrones",
+    "slug": "Game-of-Thrones",
+    "synopsis": "Nine noble families fight for control over the lands of Westeros, while an ancient enemy returns after being dormant for millennia.",
+    "trailerUrl": "https://www.youtube.com/watch?v=KPLWWIOCOOQ&ab_channel=GameofThrones",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BYTRiNDQwYzAtMzVlZS00NTI5LWJjYjUtMzkwNTUzMWMxZTllXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_FMjpg_UX1000_.jpg",
+    "rating": 8,
+    "genreId": 1,
+    "authorId": 2
+  },
+  {
+    "title": "House of the Dragon",
+    "slug": "House-of-the-Dragon",
+    "synopsis": "An internal succession war within House Targaryen at the height of its power, 172 years before the birth of Daenerys Targaryen.",
+    "trailerUrl": "https://www.youtube.com/watch?v=DotnJ7tTA34&ab_channel=HBOMax",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BZjBiOGIyY2YtOTA3OC00YzY1LThkYjktMGRkYTNhNTExY2I2XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UX1000_.jpg",
+    "rating": 8,
+    "genreId": 1,
+    "authorId": 3
+  },
+  {
+    "title": "Stranger Things",
+    "slug": "Stranger-Things",
+    "synopsis": "When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces in order to get him back.",
+    "trailerUrl": "https://www.youtube.com/watch?v=b9EkMc79ZSU&ab_channel=Netflix",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BMDZkYmVhNjMtNWU4MC00MDQxLWE3MjYtZGMzZWI1ZjhlOWJmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+    "rating": 8,
+    "genreId": 3,
+    "authorId": 2
+  },
+  {
+    "title": "The Boys",
+    "slug": "The-Boys",
+    "synopsis": "A group of vigilantes set out to take down corrupt superheroes who abuse their superpowers.",
+    "trailerUrl": "https://www.youtube.com/watch?v=M1bhOaLV4FU&ab_channel=AmazonPrimeVideoUK",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BOTEyNDJhMDAtY2U5ZS00OTMzLTkwODktMjU3MjFkZWVlMGYyXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_FMjpg_UX1000_.jpg",
+    "rating": 8,
+    "genreId": 1,
+    "authorId": 3
+  },
+  {
+    "title": "Chernobyl",
+    "slug": "Chernobyl",
+    "synopsis": "In April 1986, an explosion at the Chernobyl nuclear power plant in the Union of Soviet Socialist Republics becomes one of the world's worst man-made catastrophes.",
+    "trailerUrl": "https://www.youtube.com/watch?v=s9APLXM9Ei8&ab_channel=HBO",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BZTg4NTUzNGQtY2I4YS00ZDAxLWFhNjAtMDNiMjc3NjY2NGI5XkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
+    "rating": 8,
+    "genreId": 3,
+    "authorId": 1
+  },
+  {
+    "title": "Black Mirror",
+    "slug": "Black-Mirror",
+    "synopsis": "An anthology series exploring a twisted, high-tech multiverse where humanity's greatest innovations and darkest instincts collide.",
+    "trailerUrl": "https://www.youtube.com/watch?v=yef_HfQoBd8&ab_channel=Netflix",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BYTM3YWVhMDMtNjczMy00NGEyLWJhZDctYjNhMTRkNDE0ZTI1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg",
+    "rating": 8,
+    "genreId": 3,
+    "authorId": 5
+  },
+  {
+    "title": "Rick and Morty",
+    "slug": "Rick-and-Morty",
+    "synopsis": "An animated series that follows the exploits of a super scientist and his not-so-bright grandson.",
+    "trailerUrl": "https://www.youtube.com/watch?v=jerFRSQW9g8&ab_channel=RottenTomatoesTV",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_FMjpg_UX1000_.jpg",
+    "rating": 8,
+    "genreId": 1,
+    "authorId": 1
+  },
+  {
+    "title": "South Park",
+    "slug": "South-Park",
+    "synopsis": "Follows the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
+    "trailerUrl": "https://www.youtube.com/watch?v=6tJdei18t-A&ab_channel=SouthParkStudios",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BZjNhODYzZGItZWQ3Ny00ZjViLTkxMTUtM2EzN2RjYjU2OGZiXkEyXkFqcGdeQXVyMTI5MTc0OTIy._V1_FMjpg_UX1000_.jpg",
+    "rating": 8,
+    "genreId": 4,
+    "authorId": 4
+  },
+  {
+    "title": "The Skit Begins",
+    "slug": "The-Skit-Begins",
+    "synopsis": "The story of five young people in their late 20s who try to overcome their great failures in life.",
+    "trailerUrl": "https://www.youtube.com/watch?v=Crs_vKUcROQ&t=1s&ab_channel=kamikiRyunosuke",
+    "imgUrl": "https://img.rgstatic.com/content/show/010754d4-ddad-430e-9570-84c4d77564a6/poster-500.jpg",
+    "rating": 8,
+    "genreId": 2,
+    "authorId": 2
+  },
+  {
+    "title": "Avatar: The Way of Water",
+    "slug": "Avatar:-The-Way-of-Water",
+    "synopsis": "Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home.",
+    "trailerUrl": "https://www.youtube.com/watch?v=6QPL2UWvbUw&ab_channel=MovieCoverage",
+    "imgUrl": "https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UX1000_.jpg",
+    "rating": 7,
+    "genreId": 1,
+    "authorId": 2
+  }
+]
