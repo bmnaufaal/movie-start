@@ -1,5 +1,5 @@
 import { Card, Title, Paragraph, Chip } from "react-native-paper";
-import {  StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function MovieData({ movie, navigation }) {
@@ -21,19 +21,24 @@ export default function MovieData({ movie, navigation }) {
   return (
     <>
       <Card
-      mode="contained"
+        mode="contained"
         onPress={() => {
           navigation.navigate("Detail", {
             id: movie.id,
           });
         }}
       >
+        <Card.Cover
+          style={{ borderBottomEndRadius: 0, }}
+          source={{ uri: movie.imgUrl }}
+        />
         <Card.Content>
-          <Card.Cover source={{ uri: movie.imgUrl }} />
           <Title style={styles.title}>{movie.title}</Title>
           <View style={{ alignSelf: "center", flexDirection: "row" }}>
-            <Chip  icon="star">{movie.rating}</Chip>
-            <Chip mode="contained" icon="movie-roll">{movie.Genre.name}</Chip>
+            <Chip icon="star">{movie.rating}</Chip>
+            <Chip mode="contained" icon="movie-roll">
+              {movie.Genre.name}
+            </Chip>
           </View>
         </Card.Content>
       </Card>
