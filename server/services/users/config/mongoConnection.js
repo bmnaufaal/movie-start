@@ -9,16 +9,17 @@ const client = new MongoClient(url);
 
 // Database Name
 const dbName = "db_movie";
+let db;
 
-async function mongoConnect(collectionName) {
+async function mongoConnect() {
   try {
     // Use connect method to connect to the server
     await client.connect();
     console.log("Connected successfully to server");
-    const db = client.db(dbName);
-    const usersCollection = db.collection(collectionName);
+    db = client.db(dbName);
+    // const usersCollection = db.collection(collectionName);
 
-    return usersCollection;
+    return "connect";
     // const users = await usersCollection.find({}).toArray();
 
     // the following code examples can be pasted here...
@@ -45,7 +46,9 @@ async function mongoConnect(collectionName) {
   }
 }
 
-module.exports = { mongoConnect };
+const getDatabase = () => db;
+
+module.exports = { mongoConnect, getDatabase };
 
 // mongoConnect()
 //   .then((data) => console.log(data))
