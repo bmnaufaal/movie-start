@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { View, Text, Button } from "react-native";
-import { Card, Title, Paragraph } from "react-native-paper";
+import { View, StyleSheet } from "react-native";
+import { Card, Title, Chip, Text } from "react-native-paper";
 
 export default function Detail({ route, navigation }) {
   const { id } = route.params;
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState({});
 
   const fetchMovieDetail = async (id) => {
     fetch("https://api.pilem-start.shop/movies/" + id)
@@ -21,15 +21,54 @@ export default function Detail({ route, navigation }) {
     navigation.setOptions({ title: movie.title });
   }, []);
 
-  //   console.log(movie);
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: "center",
+      padding: 20,
+    },
+    title: {
+      fontWeight: "600",
+      alignSelf: "center",
+    },
+    footer: {
+      padding: 10,
+      backgroundColor: "#3F00FF",
+      color: "#FFFFFF",
+      borderRadius: 10,
+      overflow: "hidden",
+      marginHorizontal: 3,
+    },
+    synopsis: {
+      textAlign: "justify",
+    },
+  });
 
   return (
-    <View>
-      <Card>
+    <View style={styles.container}>
+      <Card
+        mode="contained"
+        onPress={() => {
+          navigation.navigate("Detail", {
+            id: movie.id,
+          });
+        }}
+      >
+        <Card.Cover
+          style={{ borderBottomEndRadius: 0 }}
+          source={{ uri: movie.imgUrl }}
+        />
         <Card.Content>
-          <Card.Cover source={{ uri: movie.imgUrl }} />
-          <Title>{movie.title}</Title>
-          {/* <Paragraph>{movie.Genre.name}</Paragraph> */}
+          <Title style={styles.title}>{movie.title}</Title>
+          <View style={{ alignSelf: "center", flexDirection: "row" }}>
+            <Chip icon="star">{movie.rating}</Chip>
+            <Chip mode="contained" icon="movie-roll">
+              {movie.Genre?.name}
+            </Chip>
+          </View>
+          <Text style={styles.synopsis} variant="bodyMedium">
+            {movie.synopsis}
+          </Text>
         </Card.Content>
       </Card>
     </View>

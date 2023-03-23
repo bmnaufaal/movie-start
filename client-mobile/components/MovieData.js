@@ -19,29 +19,27 @@ export default function MovieData({ movie, navigation }) {
   });
 
   return (
-    <>
-      <Card
-        mode="contained"
-        onPress={() => {
-          navigation.navigate("Detail", {
-            id: movie.id,
-          });
-        }}
-      >
-        <Card.Cover
-          style={{ borderBottomEndRadius: 0, }}
-          source={{ uri: movie.imgUrl }}
-        />
-        <Card.Content>
-          <Title style={styles.title}>{movie.title}</Title>
-          <View style={{ alignSelf: "center", flexDirection: "row" }}>
-            <Chip icon="star">{movie.rating}</Chip>
-            <Chip mode="contained" icon="movie-roll">
-              {movie.Genre.name}
-            </Chip>
-          </View>
-        </Card.Content>
-      </Card>
-    </>
+    <Card
+      mode="contained"
+      onPress={() => {
+        navigation.navigate("Detail", {
+          id: movie.id,
+        });
+      }}
+    >
+      <Card.Cover
+        style={{ borderBottomEndRadius: 0 }}
+        source={{ uri: movie.imgUrl }}
+      />
+      <Card.Content>
+        <Title style={styles.title}>{movie.title}</Title>
+        <View style={{ alignSelf: "center", flexDirection: "row" }}>
+          <Chip icon="star">{movie.rating}</Chip>
+          <Chip mode="contained" icon="movie-roll">
+            {movie.Genre.name}
+          </Chip>
+        </View>
+      </Card.Content>
+    </Card>
   );
 }
