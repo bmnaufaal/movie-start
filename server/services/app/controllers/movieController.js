@@ -97,7 +97,7 @@ class MovieController {
           );
         }
       }
-
+      await redis.del("app:movies");
       await t.commit();
       res.status(201).json(createdMovie);
     } catch (error) {

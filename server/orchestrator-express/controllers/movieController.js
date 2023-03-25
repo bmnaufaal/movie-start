@@ -10,11 +10,11 @@ class MovieController {
         console.log(JSON.parse(movieCache));
         res.json(JSON.parse(movieCache));
       } else {
-        const { data } = await axios({
+        const { data: movies } = await axios({
           method: "GET",
           url: "http://localhost:4002/movies/",
         });
-        await redis.set("app:movies", JSON.stringify(data));
+        await redis.set("app:movies", JSON.stringify(movies));
         console.log(data);
         res.json(data);
       }
@@ -27,12 +27,16 @@ class MovieController {
   static async findOne(req, res) {
     try {
       const { id } = req.params;
-      const { data } = await axios({
+      const { data: movie } = await axios({
         method: "GET",
         url: "http://localhost:4002/movies/" + id,
       });
-      console.log(data);
-      res.json(data);
+      const { data: user } = await axios({
+        method: "GET",
+        url: "http://localhost:4001/users/" + movie.UserMongoId,
+      });
+      movie.User = user.data;
+      res.json(movie);
     } catch (error) {
       console.log(error);
       res.status(error.response.status).json(error.response.data);
@@ -42,12 +46,12 @@ class MovieController {
   static async delete(req, res) {
     try {
       const { id } = req.params;
-      const { data } = await axios({
+      const { data: deletedMovie } = await axios({
         method: "DELETE",
         url: "http://localhost:4002/movies/" + id,
       });
       await redis.del("app:movies");
-      res.json(data);
+      res.json(deletedMovie);
     } catch (error) {
       console.log(error);
       res.status(error.response.status).json(error.response.data);

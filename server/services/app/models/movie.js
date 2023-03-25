@@ -70,6 +70,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       genreId: DataTypes.INTEGER,
       authorId: DataTypes.INTEGER,
+      UserMongoId: DataTypes.STRING,
     },
     {
       sequelize,

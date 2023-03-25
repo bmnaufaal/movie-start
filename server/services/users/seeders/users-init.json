@@ -1,0 +1,222 @@
+[
+  {
+    "id": 1,
+    "username": "jimcash",
+    "email": "jimcash@gmail.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.O3iyZIWJDv6RCBYsMW67d.r7BGHFsm32",
+    "role": "Admin",
+    "phoneNumber": "586-108-6312",
+    "address": "PO Box 74583, California",
+    "createdAt": "2023-03-19 01:07:26.851+07",
+    "updatedAt": "2023-03-19 01:07:26.851+07"
+  },
+  {
+    "id": 2,
+    "username": "jamescameron",
+    "email": "jamescameron@wordpress.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.O3iyZIWJDv6RCBYsMW67d.r7BGHFsm32",
+    "role": "Staff",
+    "phoneNumber": "683-747-2954",
+    "address": "Suite 42, Florida",
+    "createdAt": "2023-03-19 01:07:26.869+07",
+    "updatedAt": "2023-03-19 01:07:26.869+07"
+  },
+  {
+    "id": 3,
+    "username": "neildruckmann",
+    "email": "neildruckmann@omniture.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.O3iyZIWJDv6RCBYsMW67d.r7BGHFsm32",
+    "role": "Admin",
+    "phoneNumber": "172-749-5177",
+    "address": "PO Box 58112, Chicago",
+    "createdAt": "2023-03-19 01:07:26.887+07",
+    "updatedAt": "2023-03-19 01:07:26.887+07"
+  },
+  {
+    "id": 4,
+    "username": "haileesteinfield",
+    "email": "haileesteinfield@imgur.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.O3iyZIWJDv6RCBYsMW67d.r7BGHFsm32",
+    "role": "Staff",
+    "phoneNumber": "353-864-7599",
+    "address": "PO Box 92368, Ohio",
+    "createdAt": "2023-03-19 01:07:26.904+07",
+    "updatedAt": "2023-03-19 01:07:26.904+07"
+  },
+  {
+    "id": 5,
+    "username": "mslavin4",
+    "email": "bscading4@omniture.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.OInEWkrFHKcKQghBTvZhps2iaILt9RPW",
+    "role": "Admin",
+    "phoneNumber": "644-767-4991",
+    "address": "Room 1201",
+    "createdAt": "2023-03-19 01:07:26.922+07",
+    "updatedAt": "2023-03-19 01:07:26.922+07"
+  },
+  {
+    "id": 6,
+    "username": "donowlan0",
+    "email": "rmangin0@goodreads.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.Od6w.Q207OgpDzVwBR/.JF5ymioPmdoG",
+    "role": "Admin",
+    "phoneNumber": "776-968-7284",
+    "address": "Room 497",
+    "createdAt": "2023-03-19 01:07:26.939+07",
+    "updatedAt": "2023-03-19 01:07:26.939+07"
+  },
+  {
+    "id": 7,
+    "username": "dgamblin1",
+    "email": "iklimpt1@apple.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.O2LaFurzHnwYgqX0EDLgOlJopwPHdE/e",
+    "role": "Admin",
+    "phoneNumber": "859-755-1429",
+    "address": "11th Floor",
+    "createdAt": "2023-03-19 01:07:26.956+07",
+    "updatedAt": "2023-03-19 01:07:26.956+07"
+  },
+  {
+    "id": 8,
+    "username": "dradbourn2",
+    "email": "sparres2@weebly.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.OXvuh.vHC928s8/HVzzGHuzygJ5bnlES",
+    "role": "Admin",
+    "phoneNumber": "724-643-6201",
+    "address": "Apt 1630",
+    "createdAt": "2023-03-19 01:07:26.974+07",
+    "updatedAt": "2023-03-19 01:07:26.974+07"
+  },
+  {
+    "id": 9,
+    "username": "rcraghead3",
+    "email": "mnetti3@canalblog.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.OvaiyroKmi8tvjODCdfMgNbSfakXDQOG",
+    "role": "Admin",
+    "phoneNumber": "631-246-3704",
+    "address": "1st Floor",
+    "createdAt": "2023-03-19 01:07:26.991+07",
+    "updatedAt": "2023-03-19 01:07:26.991+07"
+  },
+  {
+    "id": 10,
+    "username": "ndorman4",
+    "email": "mplumb4@apple.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.Os18Jl/qGZ0st8IBgrUCb3OzIXgHA9vW",
+    "role": "Admin",
+    "phoneNumber": "172-966-1505",
+    "address": "Suite 52",
+    "createdAt": "2023-03-19 01:07:27.008+07",
+    "updatedAt": "2023-03-19 01:07:27.008+07"
+  },
+  {
+    "id": 11,
+    "username": "rcortes5",
+    "email": "ebouzek5@fc2.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.OrN/.WGHOW2pkYZ5zytGHg9pef8DgLJO",
+    "role": "Staff",
+    "phoneNumber": "551-388-2782",
+    "address": "Suite 95",
+    "createdAt": "2023-03-19 01:07:27.025+07",
+    "updatedAt": "2023-03-19 01:07:27.025+07"
+  },
+  {
+    "id": 12,
+    "username": "iraff6",
+    "email": "ecabell6@t-online.de",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.OgphehPUkKZgYgZ473JtMwdofO5aTPpa",
+    "role": "Staff",
+    "phoneNumber": "606-207-7225",
+    "address": "10th Floor",
+    "createdAt": "2023-03-19 01:07:27.043+07",
+    "updatedAt": "2023-03-19 01:07:27.043+07"
+  },
+  {
+    "id": 13,
+    "username": "fgarrie7",
+    "email": "cbuffin7@usnews.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.OSmUOp5tVB8SaszWk1E7fYhho5J32Zn6",
+    "role": "Admin",
+    "phoneNumber": "499-944-4406",
+    "address": "Apt 1563",
+    "createdAt": "2023-03-19 01:07:27.06+07",
+    "updatedAt": "2023-03-19 01:07:27.06+07"
+  },
+  {
+    "id": 14,
+    "username": "adimanche8",
+    "email": "jtremaine8@posterous.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.OHNNJpPYLo1eWRgaVaQK9wkR9eA.O9mq",
+    "role": "Staff",
+    "phoneNumber": "100-842-9199",
+    "address": "PO Box 36439",
+    "createdAt": "2023-03-19 01:07:27.077+07",
+    "updatedAt": "2023-03-19 01:07:27.077+07"
+  },
+  {
+    "id": 15,
+    "username": "bspoure9",
+    "email": "alennard9@hubpages.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.O.NvoSEh8Wk/YJSCWzy9R6HJ3yPwVvF.",
+    "role": "Admin",
+    "phoneNumber": "454-732-4796",
+    "address": "Suite 89",
+    "createdAt": "2023-03-19 01:07:27.094+07",
+    "updatedAt": "2023-03-19 01:07:27.094+07"
+  },
+  {
+    "id": 16,
+    "username": "masta",
+    "email": "slowthiana@globo.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.OU.dlXTZwnH7meMOix43izi2qkWuwmbu",
+    "role": "Staff",
+    "phoneNumber": "829-233-9766",
+    "address": "PO Box 59468",
+    "createdAt": "2023-03-19 01:07:27.112+07",
+    "updatedAt": "2023-03-19 01:07:27.112+07"
+  },
+  {
+    "id": 17,
+    "username": "acalafateb",
+    "email": "epiersb@hao123.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.OkpuR/1Zgp0TVcr90AhzZNEwqKAjKlpu",
+    "role": "Admin",
+    "phoneNumber": "120-684-7077",
+    "address": "Room 1461",
+    "createdAt": "2023-03-19 01:07:27.129+07",
+    "updatedAt": "2023-03-19 01:07:27.129+07"
+  },
+  {
+    "id": 18,
+    "username": "nrevensc",
+    "email": "espeddinc@businessinsider.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.O77v6DESEyjBcqyV9AGZW09JnDzDpTDG",
+    "role": "Staff",
+    "phoneNumber": "522-564-4787",
+    "address": "PO Box 68795",
+    "createdAt": "2023-03-19 01:07:27.146+07",
+    "updatedAt": "2023-03-19 01:07:27.146+07"
+  },
+  {
+    "id": 19,
+    "username": "eantonioud",
+    "email": "htremblotd@livejournal.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.OIAXWdolGf.Ep3/tZQppwpT/yJKN9nFS",
+    "role": "Staff",
+    "phoneNumber": "532-168-4306",
+    "address": "Room 989",
+    "createdAt": "2023-03-19 01:07:27.164+07",
+    "updatedAt": "2023-03-19 01:07:27.164+07"
+  },
+  {
+    "id": 20,
+    "username": "esyphuse",
+    "email": "dkeelye@cbslocal.com",
+    "password": "$2a$08$uHZQudP8g1HEtqhZmFd7.Or60J3Kz.MvqsWaeGyhJ5y2iuSPDpHKK",
+    "role": "Staff",
+    "phoneNumber": "482-218-6806",
+    "address": "Suite 79",
+    "createdAt": "2023-03-19 01:07:27.181+07",
+    "updatedAt": "2023-03-19 01:07:27.181+07"
+  }
+]
