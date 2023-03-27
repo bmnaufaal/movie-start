@@ -1,4 +1,5 @@
 const axios = require("axios");
+const redis = require("../config/redis");
 
 const typeDefs = `#graphql
   # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
@@ -47,11 +48,18 @@ const resolvers = {
   Query: {
     users: async () => {
       try {
-        const { data: usersData } = await axios({
-          method: "GET",
-          url: "http://localhost:4001/users",
-        });
-        return usersData.data;
+        const userCache = await redis.get("app:users");
+        if (userCache) {
+          console.log(JSON.parse(userCache));
+          res.json(JSON.parse(userCache));
+        } else {
+          const { data: usersData } = await axios({
+            method: "GET",
+            url: "http://localhost:4001/users",
+          });
+          await redis.set("app:users", JSON.stringify(usersData.data));
+          return usersData.data;
+        }
       } catch (error) {
         throw error;
       }
@@ -78,6 +86,7 @@ const resolvers = {
           url: "http://localhost:4001/users/create",
           data: input,
         });
+        await redis.del("app:users");
         return data;
       } catch (error) {
         throw error;
@@ -91,6 +100,7 @@ const resolvers = {
           method: "DELETE",
           url: "http://localhost:4001/users/" + id,
         });
+        await redis.del("app:users");
         return data;
       } catch (error) {
         throw error;
