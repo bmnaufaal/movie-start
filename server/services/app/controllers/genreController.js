@@ -1,13 +1,21 @@
 "use strict";
 const { Movie, Genre, Cast } = require("../models");
+const redis = require("../config/redis");
 
 class GenreController {
   static async findAll(req, res, next) {
     try {
-      const genres = await Genre.findAll({
-        order: [["id", "ASC"]],
-      });
-      res.status(200).json(genres);
+      const genreCache = await redis.get("app:genres");
+      if (genreCache) {
+        console.log(JSON.parse(genreCache));
+        res.json(JSON.parse(genreCache));
+      } else {
+        const genres = await Genre.findAll({
+          order: [["id", "ASC"]],
+        });
+        await redis.set("app:genres", JSON.stringify(genres));
+        res.status(200).json(genres);
+      }
     } catch (error) {
       next(error);
     }
@@ -30,9 +38,10 @@ class GenreController {
     try {
       const { name } = req.body;
       let createdGenre = await Genre.create({ name });
+      await redis.del("app:genres");
       res.status(201).json({
         message: "Success create genre",
-        createdGenre: createdGenre
+        createdGenre: createdGenre,
       });
     } catch (error) {
       next(error);
@@ -52,6 +61,7 @@ class GenreController {
         },
       });
       console.log(deletedGenre);
+      await redis.del("app:genres");
       res.status(200).json({
         message: `${foundGenre.name} success to delete`,
       });
@@ -77,6 +87,7 @@ class GenreController {
         }
       );
       console.log(updatedGenre);
+      await redis.del("app:genres");
       res.status(200).json({
         message: `${foundGenre.name} success to edit`,
       });

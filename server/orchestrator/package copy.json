@@ -1,18 +1,19 @@
 {
-  "name": "orchestrator-express",
+  "name": "orchestrator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js 4000",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "bmnaufaal",
   "license": "ISC",
   "dependencies": {
+    "@apollo/server": "^4.5.0",
     "axios": "^1.3.4",
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "graphql": "^16.6.0"
   }
 }
