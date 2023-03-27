@@ -13,9 +13,9 @@ const typeDefs = `#graphql
     trailerUrl: String
     imgUrl: String
     rating: Int
+    authorId: String
     genreId: Int
-    userMongoId: String
-    authors: User
+    author: User
     genre: Genre
     casts: [Cast]
   }
@@ -80,8 +80,14 @@ const resolvers = {
           method: "GET",
           url: "http://localhost:4002/movies",
         });
-        moviesData.map((data) => {
-          data.authors = data.Author;
+
+        moviesData = moviesData.map(async (data) => {
+          const { data: user } = await axios({
+            method: "GET",
+            url: "http://localhost:4001/users/" + data.authorId,
+          });
+          data.author = user.data;
+          console.log(data.author);
           data.genre = data.Genre;
           data.casts = data.Casts;
           return data;
@@ -99,6 +105,13 @@ const resolvers = {
           method: "GET",
           url: "http://localhost:4002/movies/" + id,
         });
+        const { data: user } = await axios({
+          method: "GET",
+          url: "http://localhost:4001/users/" + movieData.authorId,
+        });
+        movieData.author = user.data;
+        movieData.genre = movieData.Genre;
+        movieData.casts = movieData.Casts;
         return movieData;
       } catch (error) {
         throw error;

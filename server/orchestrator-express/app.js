@@ -3,7 +3,6 @@ const app = express();
 const port = 4000;
 const cors = require("cors");
 const router = require("./routers");
-const redis = require("./config/redis");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
