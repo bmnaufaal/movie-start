@@ -13,10 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       Movie.belongsTo(models.Genre, {
         foreignKey: "genreId",
       });
-      Movie.belongsTo(models.User, {
-        foreignKey: "authorId",
-        as: "Author",
-      });
       Movie.hasMany(models.Cast, {
         foreignKey: "movieId",
       });
@@ -69,8 +65,7 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       genreId: DataTypes.INTEGER,
-      authorId: DataTypes.INTEGER,
-      UserMongoId: DataTypes.STRING,
+      authorId: DataTypes.STRING,
     },
     {
       sequelize,
