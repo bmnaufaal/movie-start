@@ -1,15 +1,23 @@
 "use strict";
 const axios = require("axios");
+const redis = require("../config/redis");
 
 class MovieController {
   static async findAll(req, res) {
     try {
-      const { data: movies } = await axios({
-        method: "GET",
-        url: "http://localhost:4002/movies/",
-      });
-      console.log(movies);
-      res.json(movies);
+      const movieCache = await redis.get("app:movies");
+      if (movieCache) {
+        console.log(JSON.parse(movieCache));
+        res.json(JSON.parse(movieCache));
+      } else {
+        const { data: movies } = await axios({
+          method: "GET",
+          url: "http://localhost:4002/movies/",
+        });
+        console.log(movies);
+        await redis.set("app:movies", JSON.stringify(moviesData));
+        res.json(movies);
+      }
     } catch (error) {
       console.log(error);
       res.status(error.response.status).json(error.response.data);
@@ -66,6 +74,7 @@ class MovieController {
           authorId: authorId,
         },
       });
+      await redis.del("app:movies");
       res.json(data);
     } catch (error) {
       console.log(error);
@@ -103,6 +112,7 @@ class MovieController {
         },
       });
       console.log(data);
+      await redis.del("app:movies");
       res.json(data);
     } catch (error) {
       console.log(error);
@@ -117,6 +127,7 @@ class MovieController {
         method: "DELETE",
         url: "http://localhost:4002/movies/" + id,
       });
+      await redis.del("app:movies");
       res.json(deletedMovie);
     } catch (error) {
       console.log(error);

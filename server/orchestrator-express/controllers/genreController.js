@@ -1,16 +1,23 @@
 "use strict";
-
 const { default: axios } = require("axios");
+const redis = require("../config/redis");
 
 class GenreController {
   static async findAll(req, res) {
     try {
-      const { data } = await axios({
-        method: "GET",
-        url: "http://localhost:4002/genres/",
-      });
-      console.log(data);
-      res.json(data);
+      const genreCache = await redis.get("app:genres");
+      if (genreCache) {
+        console.log(JSON.parse(genreCache));
+        res.json(JSON.parse(genreCache));
+      } else {
+        const { data } = await axios({
+          method: "GET",
+          url: "http://localhost:4002/genres/",
+        });
+        console.log(data);
+        await redis.set("app:genres", JSON.stringify(data));
+        res.json(data);
+      }
     } catch (error) {
       console.log(error);
       res.status(error.response.status).json(error.response.data);
@@ -40,6 +47,7 @@ class GenreController {
           name: name,
         },
       });
+      await redis.del("app:genres");
       res.json(data);
     } catch (error) {
       console.log(error);
@@ -54,6 +62,7 @@ class GenreController {
         method: "DELETE",
         url: "http://localhost:4002/genres/" + id,
       });
+      await redis.del("app:genres");
       res.json(data);
     } catch (error) {
       console.log(error);
@@ -72,6 +81,7 @@ class GenreController {
           name: name,
         },
       });
+      await redis.del("app:genres");
       res.json(data);
     } catch (error) {
       console.log(error);

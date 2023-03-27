@@ -2,32 +2,24 @@
 const { Op } = require("sequelize");
 const generateSlug = require("../helpers/generateSlug");
 const { Movie, Genre, Cast, sequelize } = require("../models");
-const redis = require("../config/redis");
 
 class MovieController {
   static async findAll(req, res, next) {
     try {
-      const movieCache = await redis.get("app:movies");
-      if (movieCache) {
-        console.log(JSON.parse(movieCache));
-        res.json(JSON.parse(movieCache));
-      } else {
-        const movies = await Movie.findAll({
-          order: [["id", "ASC"]],
-          include: [
-            {
-              model: Genre,
-              attributes: ["id", "name"],
-            },
-            {
-              model: Cast,
-              attributes: ["id", "movieId", "name", "profilePict"],
-            },
-          ],
-        });
-        await redis.set("app:movies", JSON.stringify(movies));
-        res.status(200).json(movies);
-      }
+      const movies = await Movie.findAll({
+        order: [["id", "ASC"]],
+        include: [
+          {
+            model: Genre,
+            attributes: ["id", "name"],
+          },
+          {
+            model: Cast,
+            attributes: ["id", "movieId", "name", "profilePict"],
+          },
+        ],
+      });
+      res.status(200).json(movies);
     } catch (error) {
       next(error);
     }
@@ -99,7 +91,6 @@ class MovieController {
         }
       }
       await t.commit();
-      await redis.del("app:movies");
       res.status(201).json({
         message: "Success create movie",
         createdMovie: createdMovie,
@@ -123,7 +114,6 @@ class MovieController {
         },
       });
       console.log(deletedMovie);
-      await redis.del("app:movies");
       res.status(200).json({
         message: `${foundMovie.title} success to delete`,
       });
@@ -189,7 +179,6 @@ class MovieController {
       }
 
       await t.commit();
-      await redis.del("app:movies");
       res.status(200).json({
         message: `${foundMovie.title} success to edit`,
       });

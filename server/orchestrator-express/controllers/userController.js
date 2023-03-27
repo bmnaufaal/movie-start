@@ -1,16 +1,24 @@
 "use strict";
 
 const axios = require("axios");
+const redis = require("../config/redis");
 
 class UserController {
   static async findAll(req, res) {
     try {
-      const { data: users } = await axios({
-        method: "GET",
-        url: "http://localhost:4001/users",
-      });
-      console.log(users.data);
-      res.json(users.data);
+      const userCache = await redis.get("app:users");
+      if (userCache) {
+        console.log(JSON.parse(userCache));
+        res.json(JSON.parse(userCache));
+      } else {
+        const { data: users } = await axios({
+          method: "GET",
+          url: "http://localhost:4001/users",
+        });
+        console.log(users.data);
+        await redis.set("app:users", JSON.stringify(users.data));
+        res.json(users.data);
+      }
     } catch (error) {
       console.log(error);
       res.status(error.response.status).json(error.response.data);
@@ -44,6 +52,7 @@ class UserController {
           address,
         },
       });
+      await redis.del("app:users");
       res.json(data);
     } catch (error) {
       console.log(error);
@@ -58,6 +67,7 @@ class UserController {
         method: "DELETE",
         url: "http://localhost:4001/users/" + id,
       });
+      await redis.del("app:users");
       res.json(data);
     } catch (error) {
       console.log(error);

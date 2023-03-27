@@ -3,29 +3,21 @@
 const { ObjectId } = require("mongodb");
 const { getDatabase } = require("../config/mongoConnection");
 const { hashPassword } = require("../helpers/bcrypt");
-const redis = require("../config/redis");
 
 class UserController {
   static async findAll(req, res, next) {
     try {
-      const userCache = await redis.get("app:users");
-      if (userCache) {
-        console.log(JSON.parse(userCache));
-        res.json(JSON.parse(userCache));
-      } else {
-        const db = getDatabase();
-        const usersCollection = db.collection("users");
-        const users = await usersCollection.find({}).toArray();
-        users.map((user) => {
-          delete user.password;
-          return user;
-        });
-        await redis.set("app:users", JSON.stringify(users));
-        res.status(200).json({
-          message: "Find All Users",
-          data: users,
-        });
-      }
+      const db = getDatabase();
+      const usersCollection = db.collection("users");
+      const users = await usersCollection.find({}).toArray();
+      users.map((user) => {
+        delete user.password;
+        return user;
+      });
+      res.status(200).json({
+        message: "Find All Users",
+        data: users,
+      });
     } catch (error) {
       console.log(error);
       res.status(500).json({
