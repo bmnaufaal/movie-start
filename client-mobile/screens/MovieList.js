@@ -1,22 +1,16 @@
 import { useState } from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList, ScrollView } from "react-native";
+import { useQuery, gql } from "@apollo/client";
 import MovieData from "../components/MovieData";
+import { Button, Text, Chip } from "react-native-paper";
+import { GET_GENRES, GET_MOVIES } from "../config/queries";
 
 export default function MovieList({ navigation }) {
-  const [movies, setMovies] = useState([]);
-  const fetchMoviesData = async () => {
-    fetch("https://api.pilem-start.shop/movies")
-      .then(async (res) => {
-        if (!res.ok) throw await res.text();
-        return res.json();
-      })
-      .then((data) => setMovies(data))
-      .catch((error) => console.log(error));
-  };
-
-  useState(() => {
-    fetchMoviesData();
-  }, []);
+  const {
+    loading: moviesLoading,
+    data: movies,
+    error: moviesError,
+  } = useQuery(GET_MOVIES);
 
   const styles = StyleSheet.create({
     container: {
@@ -26,14 +20,28 @@ export default function MovieList({ navigation }) {
     },
   });
 
+  const renderItem = ({ item }) => {
+    return (
+      <MovieData movie={item} key={item.id} navigation={navigation}></MovieData>
+    );
+  };
+
+  if (moviesLoading)
+    return (
+      <View style={styles.container}>
+        <Button loading={true} mode="contained">
+          Loading
+        </Button>
+      </View>
+    );
+  if (moviesError) return <Text>Error ${moviesError.message}</Text>;
+
   return (
     <View style={styles.container}>
       <FlatList
-        data={movies}
+        data={movies?.movies}
         ItemSeparatorComponent={() => <View style={{ height: 20 }} />}
-        renderItem={({ item }) => (
-          <MovieData movie={item} navigation={navigation}></MovieData>
-        )}
+        renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
     </View>

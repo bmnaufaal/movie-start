@@ -77,32 +77,30 @@ const resolvers = {
   Query: {
     movies: async () => {
       try {
-        const movieCache = await redis.get("app:movies");
+        const movieCache = await redis.get("app:movies_graphql");
         if (movieCache) {
           console.log(JSON.parse(movieCache));
-          res.json(JSON.parse(movieCache));
+          return JSON.parse(movieCache);
         } else {
           let { data: moviesData } = await axios({
             method: "GET",
             url: "http://localhost:4002/movies",
           });
 
-          moviesData = moviesData.map(async (data) => {
+          for (let index = 0; index < moviesData.length; index++) {
             const { data: user } = await axios({
               method: "GET",
-              url: "http://localhost:4001/users/" + data.authorId,
+              url: "http://localhost:4001/users/" + moviesData[index].authorId,
             });
-            data.author = user.data;
-            console.log(data.author);
-            data.genre = data.Genre;
-            data.casts = data.Casts;
-            return data;
-          });
-          await redis.set("app:movies", JSON.stringify(moviesData));
+            moviesData[index].author = user.data;
+            moviesData[index].genre = moviesData[index].Genre;
+            moviesData[index].casts = moviesData[index].Casts;
+          }
+
+          await redis.set("app:movies_graphql", JSON.stringify(moviesData));
           return moviesData;
         }
       } catch (error) {
-        console;
         throw error;
       }
     },
@@ -136,7 +134,7 @@ const resolvers = {
           data: input,
         });
         console.log(input.trailerUrl);
-        await redis.del("app:movies");
+        await redis.del("app:movies_graphql");
         return data;
       } catch (error) {
         throw error;
@@ -152,7 +150,7 @@ const resolvers = {
           data: input,
         });
         console.log(data);
-        await redis.del("app:movies");
+        await redis.del("app:movies_graphql");
         return data;
       } catch (error) {
         throw error;
@@ -166,7 +164,7 @@ const resolvers = {
           method: "DELETE",
           url: "http://localhost:4002/movies/" + id,
         });
-        await redis.del("app:movies");
+        await redis.del("app:movies_graphql");
         return data;
       } catch (error) {
         throw error;

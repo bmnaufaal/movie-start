@@ -1,11 +1,9 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import MovieList from "../screens/MovieList";
-import Detail from "../screens/Detail";
 const Stack = createNativeStackNavigator();
 import { useTheme } from "@react-navigation/native";
 import Genres from "../screens/Genres";
 
-export default function MainStack() {
+export default function GenreStack() {
   const { colors } = useTheme();
 
   return (
@@ -19,10 +17,9 @@ export default function MainStack() {
           fontWeight: "bold",
         },
       }}
-      initialRouteName="Home"
+      initialRouteName="Genre List"
     >
-      <Stack.Screen name="Movies List" component={MovieList} />
-      <Stack.Screen name="Detail" component={Detail} />
+      <Stack.Screen name="Genres List" component={Genres} />
     </Stack.Navigator>
   );
 }

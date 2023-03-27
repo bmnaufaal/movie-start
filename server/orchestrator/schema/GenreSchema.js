@@ -35,16 +35,16 @@ const resolvers = {
   Query: {
     genres: async () => {
       try {
-        const genreCache = await redis.get("app:genres");
+        const genreCache = await redis.get("app:genres_graphql");
         if (genreCache) {
           console.log(JSON.parse(genreCache));
-          res.json(JSON.parse(genreCache));
+          return (JSON.parse(genreCache));
         } else {
           const { data: genresData } = await axios({
             method: "GET",
             url: "http://localhost:4002/genres",
           });
-          await redis.set("app:genres", JSON.stringify(genresData));
+          await redis.set("app:genres_graphql", JSON.stringify(genresData));
           return genresData;
         }
       } catch (error) {
@@ -77,7 +77,7 @@ const resolvers = {
           },
         });
         console.log(data);
-        await redis.del("app:genres");
+        await redis.del("app:genres_graphql");
         return data;
       } catch (error) {
         throw error;
@@ -95,7 +95,7 @@ const resolvers = {
           },
         });
         console.log(data);
-        await redis.del("app:genres");
+        await redis.del("app:genres_graphql");
         return data;
       } catch (error) {
         throw error;
@@ -109,7 +109,7 @@ const resolvers = {
           method: "DELETE",
           url: "http://localhost:4002/genres/" + id,
         });
-        await redis.del("app:genres");
+        await redis.del("app:genres_graphql");
         return data;
       } catch (error) {
         throw error;
