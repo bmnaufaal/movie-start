@@ -5,7 +5,6 @@ UI Library: React Paper
 
 Struktur Folder:
 
-
 - client-mobile
 - server
   - orchestrator (port: 4000)
@@ -36,29 +35,29 @@ Target:
 
 Target:
 
-- [ ] Memahami React Native Gesture Handler
+- [x] Memahami React Native Gesture Handler
 - [x] Memahami NoSQL: Mongodb
-- [ ] Membuat service users dengan Mongodb (Kerjakan di `server/services/users`)
-- [ ] Membuat action pada users: Read, Create & Delete (Update optional)
+- [x] Membuat service users dengan Mongodb (Kerjakan di `server/services/users`)
+- [x] Membuat action pada users: Read, Create & Delete (Update optional)
 
 **Report:**
 
-...
+> Hari ini saya belajar tentang react native gesture handler, nosql, dan mongodb, saya juga berhasil membuat CRD pada entitas users
 
 ## W2D4
 
 Target:
 
-- [ ] Membuat Server Baru, Microservices
-- [ ] Memisahkan service user dan app
-- [ ] Membuat Orchestrator-express yang bisa komunikasi ke service user dan app
-- [ ] Memahami cache dalam database
-- [ ] Install dataabase Redis dan menggunakan ioRedis sebagai cache
-- [ ] Menjaga relasi User dengan product pada microservice
+- [x] Membuat Server Baru, Microservices
+- [x] Memisahkan service user dan app
+- [x] Membuat Orchestrator-express yang bisa komunikasi ke service user dan app
+- [x] Memahami cache dalam database
+- [x] Install dataabase Redis dan menggunakan ioRedis sebagai cache
+- [x] Menjaga relasi User dengan product pada microservice
 
 **Report:**
 
-...
+> Hari ini saya belajar tentang microservices, dan berhasil membuat orchestrator express yang memanggil 2 services, yaitu app dan users. Saya juga berhasil menerapkan redis pada orchestrator dan membuat relasi antara user dan movie pada kedua services
 
 ## W2D5
 

@@ -32,6 +32,7 @@ class UserController {
       const db = getDatabase();
       const usersCollection = db.collection("users");
       let user = await usersCollection.findOne({ _id: new ObjectId(id) });
+      delete user.password;
       res.status(200).json({
         message: "Find Users By Id",
         data: user,
