@@ -1,5 +1,5 @@
 "use strict";
-const { Movie, Genre, User, Cast } = require("../models");
+const { Movie, Genre, Cast } = require("../models");
 
 class GenreController {
   static async findAll(req, res, next) {
@@ -30,7 +30,10 @@ class GenreController {
     try {
       const { name } = req.body;
       let createdGenre = await Genre.create({ name });
-      res.status(201).json(createdGenre);
+      res.status(201).json({
+        message: "Success create genre",
+        createdGenre: createdGenre
+      });
     } catch (error) {
       next(error);
     }

@@ -1,5 +1,7 @@
 "use strict";
-const { Movie, Genre, User, Cast, sequelize } = require("../models");
+const { Op } = require("sequelize");
+const generateSlug = require("../helpers/generateSlug");
+const { Movie, Genre, Cast, sequelize } = require("../models");
 
 class MovieController {
   static async findAll(req, res, next) {
@@ -10,11 +12,6 @@ class MovieController {
           {
             model: Genre,
             attributes: ["id", "name"],
-          },
-          {
-            model: User,
-            as: "Author",
-            attributes: ["id", "username", "email", "role"],
           },
           {
             model: Cast,
@@ -38,11 +35,6 @@ class MovieController {
             attributes: ["id", "name"],
           },
           {
-            model: User,
-            as: "Author",
-            attributes: ["id", "username", "email", "role"],
-          },
-          {
             model: Cast,
             attributes: ["id", "movieId", "name", "profilePict"],
           },
@@ -59,6 +51,7 @@ class MovieController {
 
   static async create(req, res, next) {
     const t = await sequelize.transaction();
+    console.log(req.body);
     try {
       const {
         title,
@@ -69,8 +62,8 @@ class MovieController {
         genreId,
         castsName,
         castsPicture,
+        authorId,
       } = req.body;
-      const authorId = req.user.id;
 
       let createdMovie = await Movie.create(
         {
@@ -97,9 +90,11 @@ class MovieController {
           );
         }
       }
-      await redis.del("app:movies");
       await t.commit();
-      res.status(201).json(createdMovie);
+      res.status(201).json({
+        message: "Success create movie",
+        createdMovie: createdMovie,
+      });
     } catch (error) {
       await t.rollback();
       next(error);
@@ -128,10 +123,20 @@ class MovieController {
   }
 
   static async update(req, res, next) {
+    const t = await sequelize.transaction();
     try {
       const { id } = req.params;
-      const authorId = req.user.id;
-      const { title, synopsis, trailerUrl, imgUrl, rating, genreId } = req.body;
+      const {
+        title,
+        synopsis,
+        trailerUrl,
+        imgUrl,
+        rating,
+        genreId,
+        castsId,
+        castsName,
+        castsPicture,
+      } = req.body;
       let foundMovie = await Movie.findByPk(id);
       if (!foundMovie) {
         throw { name: "MovieNotFound" };
@@ -139,11 +144,14 @@ class MovieController {
       let updatedMovie = await Movie.update(
         {
           title: title,
+          slug: generateSlug(title),
           synopsis: synopsis,
-          trailerUr: trailerUrl,
+          trailerUrl: trailerUrl,
           imgUrl: imgUrl,
           rating: rating,
           genreId: genreId,
+          castsName: castsName,
+          castsPicture: castsPicture,
         },
         {
           where: {
@@ -153,10 +161,29 @@ class MovieController {
       );
       console.log(updatedMovie);
 
+      if (castsName.length === castsId.length) {
+        for (let index = 0; index < castsName.length; index++) {
+          await Cast.update(
+            {
+              name: castsName[index],
+              profilePict: castsPicture[index],
+            },
+            {
+              where: {
+                movieId: id,
+                id: castsId[index],
+              },
+            }
+          );
+        }
+      }
+
+      await t.commit();
       res.status(200).json({
         message: `${foundMovie.title} success to edit`,
       });
     } catch (error) {
+      await t.rollback();
       next(error);
     }
   }

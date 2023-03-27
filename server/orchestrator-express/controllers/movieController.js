@@ -15,8 +15,8 @@ class MovieController {
           url: "http://localhost:4002/movies/",
         });
         await redis.set("app:movies", JSON.stringify(movies));
-        console.log(data);
-        res.json(data);
+        console.log(movies);
+        res.json(movies);
       }
     } catch (error) {
       console.log(error);
@@ -33,7 +33,7 @@ class MovieController {
       });
       const { data: user } = await axios({
         method: "GET",
-        url: "http://localhost:4001/users/" + movie.UserMongoId,
+        url: "http://localhost:4001/users/" + movie.authorId,
       });
       movie.User = user.data;
       res.json(movie);

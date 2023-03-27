@@ -38,12 +38,49 @@ class GenreController {
     }
   }
 
+  static async create(req, res) {
+    try {
+      const { name } = req.body;
+      const { data } = await axios({
+        method: "POST",
+        url: "http://localhost:4002/genres/add",
+        data: {
+          name: name,
+        },
+      });
+      await redis.del("app:genres");
+      res.json(data);
+    } catch (error) {
+      console.log(error);
+      res.status(error.response.status).json(error.response.data);
+    }
+  }
+
   static async delete(req, res) {
     try {
       const { id } = req.params;
       const { data } = await axios({
         method: "DELETE",
         url: "http://localhost:4002/genres/" + id,
+      });
+      await redis.del("app:genres");
+      res.json(data);
+    } catch (error) {
+      console.log(error);
+      res.status(error.response.status).json(error.response.data);
+    }
+  }
+
+  static async update(req, res) {
+    try {
+      const { id } = req.params;
+      const { name } = req.body;
+      const { data } = await axios({
+        method: "PUT",
+        url: "http://localhost:4002/genres/" + id,
+        data: {
+          name: name,
+        },
       });
       await redis.del("app:genres");
       res.json(data);

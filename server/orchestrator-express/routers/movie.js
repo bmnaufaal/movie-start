@@ -1,11 +1,11 @@
 const MovieController = require("../controllers/movieController");
 
-const movieController = require("express").Router();
+const movieRouter = require("express").Router();
 
-movieController.get("", MovieController.findAll);
-// movieController.post("/add", authentication, MovieController.create);
-movieController.get("/:id", MovieController.findOne);
-// movieController.delete("/:id", authentication, MovieController.delete);
-// movieController.put("/:id", authentication, MovieController.update);
+movieRouter.get("", MovieController.findAll);
+// movieRouter.post("/add", authentication, MovieController.create);
+movieRouter.get("/:id", MovieController.findOne);
+// movieRouter.delete("/:id", authentication, MovieController.delete);
+// movieRouter.put("/:id", authentication, MovieController.update);
 
-module.exports = movieController;
+module.exports = movieRouter;

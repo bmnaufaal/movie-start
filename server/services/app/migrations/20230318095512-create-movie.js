@@ -44,16 +44,8 @@ module.exports = {
         allowNull: false,
       },
       authorId: {
-        type: Sequelize.DataTypes.INTEGER,
-        references: {
-          model: {
-            tableName: "Users",
-          },
-          key: "id",
-        },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
         allowNull: false,
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

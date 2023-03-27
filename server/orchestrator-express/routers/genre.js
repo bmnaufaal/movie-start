@@ -1,11 +1,11 @@
 const GenreController = require("../controllers/genreController");
 
-const genreController = require("express").Router();
+const genreRouter = require("express").Router();
 
-genreController.get("", GenreController.findAll);
-// genreController.post("/add", authentication, GenreController.create);
-genreController.get("/:id", GenreController.findOne);
-// genreController.delete("/:id", authentication, GenreController.delete);
-// genreController.put("/:id", authentication, GenreController.update);
+genreRouter.get("", GenreController.findAll);
+genreRouter.post("/add", GenreController.create);
+genreRouter.get("/:id", GenreController.findOne);
+genreRouter.delete("/:id", GenreController.delete);
+genreRouter.put("/:id", GenreController.update);
 
-module.exports = genreController;
+module.exports = genreRouter;

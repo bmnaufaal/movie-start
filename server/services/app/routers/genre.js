@@ -4,9 +4,9 @@ const authentication = require("../middlewares/authentication");
 const genreController = require("express").Router();
 
 genreController.get("", GenreController.findAll);
-// genreController.post("/add", authentication, GenreController.create);
+genreController.post("/add", GenreController.create);
 genreController.get("/:id", GenreController.findOne);
-// genreController.delete("/:id", authentication, GenreController.delete);
-// genreController.put("/:id", authentication, GenreController.update);
+genreController.delete("/:id", GenreController.delete);
+genreController.put("/:id", GenreController.update);
 
 module.exports = genreController;
