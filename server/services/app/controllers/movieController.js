@@ -79,16 +79,20 @@ class MovieController {
       );
 
       if (castsName) {
+        let createdCasts = [];
         for (let index = 0; index < castsName.length; index++) {
-          await Cast.create(
-            {
-              movieId: createdMovie.id,
-              name: castsName[index],
-              profilePict: castsPicture[index],
-            },
-            { transaction: t }
-          );
+          let cast = {
+            movieId: "",
+            name: "",
+            profilePict: "",
+          };
+          cast.movieId = createdMovie.id;
+          cast.name = castsName[index];
+          cast.profilePict = castsPicture[index];
+          createdCasts.push(cast);
         }
+
+        await Cast.bulkCreate(createdCasts, { transaction: t });
       }
       await t.commit();
       res.status(201).json({
@@ -96,6 +100,7 @@ class MovieController {
         createdMovie: createdMovie,
       });
     } catch (error) {
+      console.log(error);
       await t.rollback();
       next(error);
     }
@@ -159,7 +164,7 @@ class MovieController {
           },
         }
       );
-      console.log(updatedMovie);
+      console.log(`movie id ${id}, id ${castsId}`);
 
       if (castsName.length === castsId.length) {
         for (let index = 0; index < castsName.length; index++) {
@@ -171,7 +176,7 @@ class MovieController {
             {
               where: {
                 movieId: id,
-                id: castsId[index],
+                id: castsId,
               },
             }
           );

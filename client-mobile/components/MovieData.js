@@ -34,9 +34,9 @@ export default function MovieData({ movie, navigation }) {
       <Card.Content>
         <Title style={styles.title}>{movie.title}</Title>
         <View style={{ alignSelf: "center", flexDirection: "row" }}>
-          <Chip icon="star">{movie.rating}</Chip>
+          <Chip icon="star">{movie?.rating}</Chip>
           <Chip mode="contained" icon="movie-roll">
-            {movie.Genre.name}
+            {movie.genre.name}
           </Chip>
         </View>
       </Card.Content>

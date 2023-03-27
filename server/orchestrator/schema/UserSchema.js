@@ -48,7 +48,7 @@ const resolvers = {
   Query: {
     users: async () => {
       try {
-        const userCache = await redis.get("app:users");
+        const userCache = await redis.get("app:users_graphql");
         if (userCache) {
           console.log(JSON.parse(userCache));
           res.json(JSON.parse(userCache));
@@ -57,7 +57,7 @@ const resolvers = {
             method: "GET",
             url: "http://localhost:4001/users",
           });
-          await redis.set("app:users", JSON.stringify(usersData.data));
+          await redis.set("app:users_graphql", JSON.stringify(usersData.data));
           return usersData.data;
         }
       } catch (error) {
@@ -86,7 +86,7 @@ const resolvers = {
           url: "http://localhost:4001/users/create",
           data: input,
         });
-        await redis.del("app:users");
+        await redis.del("app:users_graphql");
         return data;
       } catch (error) {
         throw error;
@@ -100,7 +100,7 @@ const resolvers = {
           method: "DELETE",
           url: "http://localhost:4001/users/" + id,
         });
-        await redis.del("app:users");
+        await redis.del("app:users_graphql");
         return data;
       } catch (error) {
         throw error;

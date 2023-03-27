@@ -1,9 +1,9 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Settings from "../screens/Settings";
 import MainStack from "./MainStack";
 const Tab = createBottomTabNavigator();
 import { BottomNavigation } from "react-native-paper";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import GenreStack from "./GenreStack";
 
 export default function BottomNavigationScreen() {
   return (
@@ -64,12 +64,12 @@ export default function BottomNavigationScreen() {
         }}
       />
       <Tab.Screen
-        name="Settings"
-        component={Settings}
+        name="Genres"
+        component={GenreStack}
         options={{
-          tabBarLabel: "Settings",
+          tabBarLabel: "Genres",
           tabBarIcon: ({ color, size }) => {
-            return <Icon name="cog" size={size} color={color} />;
+            return <Icon name="cards-outline" size={size} color={color} />;
           },
         }}
       />

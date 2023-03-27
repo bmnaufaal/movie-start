@@ -1,25 +1,20 @@
 import { useEffect, useState } from "react";
-import { View, StyleSheet } from "react-native";
-import { Card, Title, Chip, Text } from "react-native-paper";
+import { View, StyleSheet, FlatList, Image, ScrollView } from "react-native";
+import { Card, Title, Chip, Button, Text } from "react-native-paper";
+import { useQuery, gql } from "@apollo/client";
+import { GET_MOVIE_DETAIL } from "../config/queries";
 
 export default function Detail({ route, navigation }) {
   const { id } = route.params;
-  const [movie, setMovie] = useState({});
-
-  const fetchMovieDetail = async (id) => {
-    fetch("https://api.pilem-start.shop/movies/" + id)
-      .then(async (res) => {
-        if (!res.ok) throw await res.text();
-        return res.json();
-      })
-      .then((data) => setMovie(data))
-      .catch((error) => console.log(error));
-  };
+  const { loading, data, error } = useQuery(GET_MOVIE_DETAIL, {
+    variables: {
+      movieDetailId: id,
+    },
+  });
 
   useEffect(() => {
-    fetchMovieDetail(id);
-    navigation.setOptions({ title: movie.title });
-  }, []);
+    navigation.setOptions({ title: data?.movieDetail.title });
+  }, [data?.movieDetail]);
 
   const styles = StyleSheet.create({
     container: {
@@ -41,36 +36,60 @@ export default function Detail({ route, navigation }) {
     },
     synopsis: {
       textAlign: "justify",
+      marginBottom: 15,
+    },
+    casts: {
+      flexDirection: "row",
     },
   });
 
-  return (
-    <View style={styles.container}>
-      <Card
-        mode="contained"
-        onPress={() => {
-          navigation.navigate("Detail", {
-            id: movie.id,
-          });
-        }}
-      >
+  if (loading)
+    return (
+      <View style={styles.container}>
+        <Button loading={true} mode="contained">
+          Loading
+        </Button>
+      </View>
+    );
+  if (error) return <Text>Error ${error.message}</Text>;
+
+  const renderItem = ({ item }) => {
+    return (
+      <View style={{ width: "50%" }}>
         <Card.Cover
-          style={{ borderBottomEndRadius: 0 }}
-          source={{ uri: movie.imgUrl }}
+          style={{ marginHorizontal: 5 }}
+          source={{ uri: item.profilePict }}
         />
+        <Title style={styles.title}>{item.name}</Title>
+      </View>
+    );
+  };
+
+  return (
+    <ScrollView>
+      <Card mode="contained">
+        <Card.Cover source={{ uri: data?.movieDetail.imgUrl }} />
         <Card.Content>
-          <Title style={styles.title}>{movie.title}</Title>
+          <Title style={styles.title}>{data?.movieDetail.title}</Title>
           <View style={{ alignSelf: "center", flexDirection: "row" }}>
-            <Chip icon="star">{movie.rating}</Chip>
+            <Chip icon="star">{data?.movieDetail.rating}</Chip>
             <Chip mode="contained" icon="movie-roll">
-              {movie.Genre?.name}
+              {data?.movieDetail.genre.name}
             </Chip>
           </View>
           <Text style={styles.synopsis} variant="bodyMedium">
-            {movie.synopsis}
+            {data?.movieDetail.synopsis}
           </Text>
+          <FlatList
+            scrollEnabled={false}
+            numColumns={2}
+            key={data.movieDetail.casts.id}
+            data={data?.movieDetail.casts}
+            renderItem={renderItem}
+            ItemSeparatorComponent={() => <View style={{ height: 10 }} />}
+          ></FlatList>
         </Card.Content>
       </Card>
-    </View>
+    </ScrollView>
   );
 }

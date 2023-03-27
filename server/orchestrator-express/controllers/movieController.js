@@ -15,7 +15,7 @@ class MovieController {
           url: "http://localhost:4002/movies/",
         });
         console.log(movies);
-        await redis.set("app:movies", JSON.stringify(moviesData));
+        await redis.set("app:movies", JSON.stringify(movies));
         res.json(movies);
       }
     } catch (error) {
