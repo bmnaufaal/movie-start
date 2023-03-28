@@ -12,7 +12,7 @@ class GenreController {
       } else {
         const { data } = await axios({
           method: "GET",
-          url: "http://localhost:4002/genres/",
+          url: process.env.APP_SERVICE_URL + "/genres/",
         });
         console.log(data);
         await redis.set("app:genres", JSON.stringify(data));
@@ -27,9 +27,12 @@ class GenreController {
   static async findOne(req, res) {
     try {
       const { id } = req.params;
-      const { data } = await axios("http://localhost:4002/genres/" + id, {
-        method: "GET",
-      });
+      const { data } = await axios(
+        process.env.APP_SERVICE_URL + "/genres/" + id,
+        {
+          method: "GET",
+        }
+      );
       console.log(data);
       res.json(data);
     } catch (error) {
@@ -42,7 +45,7 @@ class GenreController {
       const { name } = req.body;
       const { data } = await axios({
         method: "POST",
-        url: "http://localhost:4002/genres/add",
+        url: process.env.APP_SERVICE_URL + "/genres/add",
         data: {
           name: name,
         },
@@ -60,7 +63,7 @@ class GenreController {
       const { id } = req.params;
       const { data } = await axios({
         method: "DELETE",
-        url: "http://localhost:4002/genres/" + id,
+        url: process.env.APP_SERVICE_URL + "/genres/" + id,
       });
       await redis.del("app:genres");
       res.json(data);
@@ -76,7 +79,7 @@ class GenreController {
       const { name } = req.body;
       const { data } = await axios({
         method: "PUT",
-        url: "http://localhost:4002/genres/" + id,
+        url: process.env.APP_SERVICE_URL + "/genres/" + id,
         data: {
           name: name,
         },

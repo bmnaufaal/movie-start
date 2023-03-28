@@ -3,8 +3,8 @@ const { MongoClient, ObjectId } = require("mongodb");
 // import { MongoClient } from 'mongodb'
 
 // Connection URL
-const url =
-  "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.8.0";
+console.log(process.env.URL_MONGODB);
+const url = process.env.URL_MONGODB;
 const client = new MongoClient(url);
 
 // Database Name

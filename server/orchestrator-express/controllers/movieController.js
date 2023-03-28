@@ -7,14 +7,24 @@ class MovieController {
     try {
       const movieCache = await redis.get("app:movies");
       if (movieCache) {
-        console.log(JSON.parse(movieCache));
         res.json(JSON.parse(movieCache));
       } else {
         const { data: movies } = await axios({
           method: "GET",
-          url: "http://localhost:4002/movies/",
+          url: process.env.APP_SERVICE_URL + "/movies/",
         });
-        console.log(movies);
+
+        for (let index = 0; index < movies.length; index++) {
+          const { data: user } = await axios({
+            method: "GET",
+            url:
+              process.env.USER_SERVICE_URL + "/users/" + movies[index].authorId,
+          });
+          movies[index].author = user.data;
+          movies[index].genre = movies[index].Genre;
+          movies[index].casts = movies[index].Casts;
+        }
+        // console.log(movies);
         await redis.set("app:movies", JSON.stringify(movies));
         res.json(movies);
       }
@@ -29,11 +39,11 @@ class MovieController {
       const { id } = req.params;
       const { data: movie } = await axios({
         method: "GET",
-        url: "http://localhost:4002/movies/" + id,
+        url: process.env.APP_SERVICE_URL + "/movies/" + id,
       });
       const { data: user } = await axios({
         method: "GET",
-        url: "http://localhost:4001/users/" + movie.authorId,
+        url: process.env.USER_SERVICE_URL + "/users/" + movie.authorId,
       });
       movie.Author = user.data;
       console.log(movie);
@@ -60,7 +70,7 @@ class MovieController {
       } = req.body;
       const { data } = await axios({
         method: "POST",
-        url: "http://localhost:4002/movies/add",
+        url: process.env.APP_SERVICE_URL + "/movies/add",
         data: {
           title: title,
           synopsis: synopsis,
@@ -98,7 +108,7 @@ class MovieController {
       } = req.body;
       const { data } = await axios({
         method: "PUT",
-        url: "http://localhost:4002/movies/" + id,
+        url: process.env.APP_SERVICE_URL + "/movies/" + id,
         data: {
           title: title,
           synopsis: synopsis,
@@ -125,7 +135,7 @@ class MovieController {
       const { id } = req.params;
       const { data: deletedMovie } = await axios({
         method: "DELETE",
-        url: "http://localhost:4002/movies/" + id,
+        url: process.env.APP_SERVICE_URL + "/movies/" + id,
       });
       await redis.del("app:movies");
       res.json(deletedMovie);

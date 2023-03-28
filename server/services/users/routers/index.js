@@ -1,6 +1,11 @@
 const router = require("express").Router();
 const userRouter = require("./user");
 
-router.use("/", userRouter);
+router.get("/", (req, res) => {
+  res.status(200).json({
+    message: `Welcome to Users Service with DB_URL = ${process.env.DATABASE_URL}`,
+  });
+});
+router.use("/users", userRouter);
 
 module.exports = router;
