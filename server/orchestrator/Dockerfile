@@ -5,7 +5,7 @@ FROM node:lts-hydrogen
 WORKDIR /usr/local/orchestrator
 
 # untuk set ENV dalam aplikasi kita
-ENV PORT=4000
+ENV PORT=80
 
 # copy deps yang ada di apps ke WORKDIR
 COPY package.json package-lock.json /usr/local/orchestrator/
