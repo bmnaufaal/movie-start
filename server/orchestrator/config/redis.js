@@ -5,9 +5,10 @@ const Redis = require("ioredis");
 // We are going to cover how to specify connection options soon.
 
 const redis = new Redis({
-  port: process.env.REDIS_PORT,
-  host: process.env.REDIS_HOST_URL,
-  password: process.env.REDIS_PASSWORD,
+  port: process.env.PORT_REDIS,
+  host: process.env.HOST_REDIS,
+  username: "default",
+  password: process.env.PASS_REDIS,
 });
 
 console.log(process.env.PORT_REDIS);
