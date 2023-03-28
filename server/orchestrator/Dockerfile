@@ -2,13 +2,13 @@
 FROM node:lts-hydrogen
 
 # path di container dimana berisi codingan kita (path bebas sesuai kesepakatan bersama)
-WORKDIR /usr/local/users
+WORKDIR /usr/local/orchestrator
 
 # untuk set ENV dalam aplikasi kita
-ENV PORT=4001
+ENV PORT=4000
 
 # copy deps yang ada di apps ke WORKDIR
-COPY package.json package-lock.json /usr/local/users/
+COPY package.json package-lock.json /usr/local/orchestrator/
 
 # Install npm & Mengapus cache
 RUN npm install && npm cache clean --force
