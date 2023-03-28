@@ -18,3 +18,5 @@ RUN npm install -g nodemon
 
 # copy semua file & folder ke WORKDIR
 COPY ./ ./
+
+CMD [ "npm", "start" ]
