@@ -3,8 +3,8 @@ const { MongoClient, ObjectId } = require("mongodb");
 // import { MongoClient } from 'mongodb'
 
 // Connection URL
-console.log(process.env.URL_MONGODB);
-const url = process.env.URL_MONGODB;
+console.log(process.env.MONGO_URL);
+const url = process.env.MONGO_URL;
 const client = new MongoClient(url);
 
 // Database Name

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app",
+    "start": "npx nodemon app",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app --4001"
   },
