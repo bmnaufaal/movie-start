@@ -4,7 +4,7 @@ if (process.env.NODE_ENV !== "production") {
 
 const express = require("express");
 const app = express();
-const port = 4001;
+const port = process.env.PORT || 4001;
 const cors = require("cors");
 const router = require("./routers");
 const { mongoConnect } = require("./config/mongoConnection");
