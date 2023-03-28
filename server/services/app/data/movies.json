@@ -7,7 +7,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BZGUzYTI3M2EtZmM0Yy00NGUyLWI4ODEtN2Q3ZGJlYzhhZjU3XkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_FMjpg_UX1000_.jpg",
     "rating": 9,
     "genreId": 3,
-    "authorId": "641c00df57c7037dff9f8e28"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Arcane",
@@ -17,7 +17,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BYmU5OWM5ZTAtNjUzOC00NmUyLTgyOWMtMjlkNjdlMDAzMzU1XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX1000_.jpg",
     "rating": 10,
     "genreId": 1,
-    "authorId": "641e675ac0bc772b8f7ea47e"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Love, Death & Robots",
@@ -27,7 +27,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BYTNiYTNkNTAtYzE3ZS00ZDQ1LWEwZTYtZjI1NzYzMWJjY2U4XkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_FMjpg_UX1000_.jpg",
     "rating": 10,
     "genreId": 5,
-    "authorId": "641e675ac0bc772b8f7ea47f"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Spider-Man: Into the Spider-Verse",
@@ -37,7 +37,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BMjMwNDkxMTgzOF5BMl5BanBnXkFtZTgwNTkwNTQ3NjM@._V1_FMjpg_UX1000_.jpg",
     "rating": 8,
     "genreId": 1,
-    "authorId": "641e675ac0bc772b8f7ea480"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Cyberpunk: Edgerunners",
@@ -47,7 +47,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BMTQ0MGI4NTgtZTlkNy00YTU5LThjM2ItNDczMGFlZWY2ZWM3XkEyXkFqcGdeQXVyMTM3NDc1OTM2._V1_FMjpg_UX1000_.jpg",
     "rating": 8,
     "genreId": 5,
-    "authorId": "641e675ac0bc772b8f7ea481"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Castlevania",
@@ -57,7 +57,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BMjAzMjU2MjYzMl5BMl5BanBnXkFtZTgwNTQ4Nzk1NjM@._V1_FMjpg_UX1000_.jpg",
     "rating": 8,
     "genreId": 3,
-    "authorId": "641e675ac0bc772b8f7ea482"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Your Name.",
@@ -67,7 +67,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BODRmZDVmNzUtZDA4ZC00NjhkLWI2M2UtN2M0ZDIzNDcxYThjL2ltYWdlXkEyXkFqcGdeQXVyNTk0MzMzODA@._V1_FMjpg_UX1000_.jpg",
     "rating": 8,
     "genreId": 5,
-    "authorId": "641e675ac0bc772b8f7ea483"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Weathering with You",
@@ -77,7 +77,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BNzE4ZDEzOGUtYWFjNC00ODczLTljOGQtZGNjNzhjNjdjNjgzXkEyXkFqcGdeQXVyNzE5ODMwNzI@._V1_FMjpg_UX1000_.jpg",
     "rating": 8,
     "genreId": 5,
-    "authorId": "641e675ac0bc772b8f7ea484"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Breaking Bad",
@@ -87,7 +87,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BYTU3NWI5OGMtZmZhNy00MjVmLTk1YzAtZjA3ZDA3NzcyNDUxXkEyXkFqcGdeQXVyODY5Njk4Njc@._V1_FMjpg_UX1000_.jpg",
     "rating": 8,
     "genreId": 1,
-    "authorId": "641e675ac0bc772b8f7ea485"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Better Call Saul",
@@ -97,7 +97,7 @@
     "imgUrl": "https://flxt.tmsimg.com/assets/p13837077_b_v8_aa.jpg",
     "rating": 8,
     "genreId": 1,
-    "authorId": "641e675ac0bc772b8f7ea486"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Game of Thrones",
@@ -107,7 +107,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BYTRiNDQwYzAtMzVlZS00NTI5LWJjYjUtMzkwNTUzMWMxZTllXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_FMjpg_UX1000_.jpg",
     "rating": 8,
     "genreId": 1,
-    "authorId": "641e675ac0bc772b8f7ea487"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "House of the Dragon",
@@ -117,7 +117,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BZjBiOGIyY2YtOTA3OC00YzY1LThkYjktMGRkYTNhNTExY2I2XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UX1000_.jpg",
     "rating": 8,
     "genreId": 1,
-    "authorId": "641e675ac0bc772b8f7ea488"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Stranger Things",
@@ -127,7 +127,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BMDZkYmVhNjMtNWU4MC00MDQxLWE3MjYtZGMzZWI1ZjhlOWJmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
     "rating": 8,
     "genreId": 3,
-    "authorId": "641e675ac0bc772b8f7ea489"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "The Boys",
@@ -137,7 +137,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BOTEyNDJhMDAtY2U5ZS00OTMzLTkwODktMjU3MjFkZWVlMGYyXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_FMjpg_UX1000_.jpg",
     "rating": 8,
     "genreId": 1,
-    "authorId": "641e675ac0bc772b8f7ea48a"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Chernobyl",
@@ -147,7 +147,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BZTg4NTUzNGQtY2I4YS00ZDAxLWFhNjAtMDNiMjc3NjY2NGI5XkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
     "rating": 8,
     "genreId": 3,
-    "authorId": "641e675ac0bc772b8f7ea48b"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Black Mirror",
@@ -157,7 +157,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BYTM3YWVhMDMtNjczMy00NGEyLWJhZDctYjNhMTRkNDE0ZTI1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg",
     "rating": 8,
     "genreId": 3,
-    "authorId": "641e675ac0bc772b8f7ea48c"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Rick and Morty",
@@ -167,7 +167,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_FMjpg_UX1000_.jpg",
     "rating": 8,
     "genreId": 1,
-    "authorId": "641e675ac0bc772b8f7ea48d"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "South Park",
@@ -177,7 +177,7 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BZjNhODYzZGItZWQ3Ny00ZjViLTkxMTUtM2EzN2RjYjU2OGZiXkEyXkFqcGdeQXVyMTI5MTc0OTIy._V1_FMjpg_UX1000_.jpg",
     "rating": 8,
     "genreId": 4,
-    "authorId": "641e675ac0bc772b8f7ea48e"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "The Skit Begins",
@@ -187,7 +187,7 @@
     "imgUrl": "https://img.rgstatic.com/content/show/010754d4-ddad-430e-9570-84c4d77564a6/poster-500.jpg",
     "rating": 8,
     "genreId": 2,
-    "authorId": "641e675ac0bc772b8f7ea48f"
+    "authorId": "642281850be4245cf0445706"
   },
   {
     "title": "Avatar: The Way of Water",
@@ -197,6 +197,6 @@
     "imgUrl": "https://m.media-amazon.com/images/M/MV5BYjhiNjBlODctY2ZiOC00YjVlLWFlNzAtNTVhNzM1YjI1NzMxXkEyXkFqcGdeQXVyMjQxNTE1MDA@._V1_FMjpg_UX1000_.jpg",
     "rating": 7,
     "genreId": 1,
-    "authorId": "641e675ac0bc772b8f7ea490"
+    "authorId": "642281850be4245cf0445706"
   }
 ]

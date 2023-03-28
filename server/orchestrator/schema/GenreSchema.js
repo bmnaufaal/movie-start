@@ -28,7 +28,6 @@ const typeDefs = `#graphql
     editGenre(id: ID, name: String) : SuccessMutation
     deleteGenre(id: ID) : SuccessMutation
   }
-
 `;
 
 const resolvers = {
@@ -42,7 +41,7 @@ const resolvers = {
         } else {
           const { data: genresData } = await axios({
             method: "GET",
-            url: "http://localhost:4002/genres",
+            url: process.env.APP_SERVICE_URL + "/genres",
           });
           await redis.set("app:genres_graphql", JSON.stringify(genresData));
           return genresData;
@@ -57,7 +56,7 @@ const resolvers = {
         const { id } = args;
         const { data: genreData } = await axios({
           method: "GET",
-          url: "http://localhost:4002/genres/" + id,
+          url: process.env.APP_SERVICE_URL + "/genres/" + id,
         });
         return genreData;
       } catch (error) {
@@ -71,7 +70,7 @@ const resolvers = {
         const { name } = args;
         const { data } = await axios({
           method: "POST",
-          url: "http://localhost:4002/genres/add",
+          url: process.env.APP_SERVICE_URL + "/genres/add",
           data: {
             name: name,
           },
@@ -89,7 +88,7 @@ const resolvers = {
         const { name, id } = args;
         const { data } = await axios({
           method: "PUT",
-          url: "http://localhost:4002/genres/" + id,
+          url: process.env.APP_SERVICE_URL + "/genres/" + id,
           data: {
             name: name,
           },
@@ -107,7 +106,7 @@ const resolvers = {
         const { id } = args;
         const { data } = await axios({
           method: "DELETE",
-          url: "http://localhost:4002/genres/" + id,
+          url: process.env.APP_SERVICE_URL + "/genres/" + id,
         });
         await redis.del("app:genres_graphql");
         return data;

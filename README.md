@@ -1,4 +1,5 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10553759&assignment_repo_type=AssignmentRepo)
+
 # P3-Challenge-2
 
 UI Library: React Paper
@@ -28,8 +29,8 @@ Target:
 - [x] Membuat min 2 Screen (Home, Detail)
 
 **Report:**
-> Hari ini saya mempelajari react-native dan sudah berhasil membuat react expo app dan me-run aplikasi menggunakan simulator xcode. Saya juga berhasil membuat bottom navigation, halaman list movie dan detail movie.
 
+> Hari ini saya mempelajari react-native dan sudah berhasil membuat react expo app dan me-run aplikasi menggunakan simulator xcode. Saya juga berhasil membuat bottom navigation, halaman list movie dan detail movie.
 
 ## W2D3
 
@@ -63,25 +64,25 @@ Target:
 
 Target:
 
-- [ ] Memahami GraphQL dan tahu perbedaan dengan RESTful API
-- [ ] Membuat Orchestrator dengan menggunakan GraphQL
-- [ ] Memahami Typedefs, Resolvers
-- [ ] Mampu membuat Query dan Mutation
-- [ ] Menggunakan redis pada graphql untuk kebutuhan cache server
-- [ ] Memahami Apollo-Client & Implementasi pada mobile apps
-- [ ] Memahami cache pada Apollo-Client
+- [x] Memahami GraphQL dan tahu perbedaan dengan RESTful API
+- [x] Membuat Orchestrator dengan menggunakan GraphQL
+- [x] Memahami Typedefs, Resolvers
+- [x] Mampu membuat Query dan Mutation
+- [x] Menggunakan redis pada graphql untuk kebutuhan cache server
+- [x] Memahami Apollo-Client & Implementasi pada mobile apps
+- [x] Memahami cache pada Apollo-Client
 
 **Report:**
 
-...
+> Hari ini saya belajar tentang graphQL dan berhasil mengimplementasikannya ke orchestrator. Saya juga berhasil menggunakan apollo client untuk mobile apps.
 
 ## W3D1
 
 Target:
 
-- [ ] Memahami Docker
-- [ ] Implementasi Docker pada aplikasi server
+- [x] Memahami Docker
+- [x] Implementasi Docker pada aplikasi server
 
 **Report:**
 
-...
+> Hari ini saya belajar docker dan berhasil implementasi docker pada semua server.

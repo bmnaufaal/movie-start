@@ -41,7 +41,6 @@ const typeDefs = `#graphql
     genreId: Int, 
     castsName: [String],
     castsPicture: [String],
-    castsId: [Int],
     authorId: String
   }
 
@@ -84,13 +83,13 @@ const resolvers = {
         } else {
           let { data: moviesData } = await axios({
             method: "GET",
-            url: "http://localhost:4002/movies",
+            url: process.env.APP_SERVICE_URL + "/movies",
           });
 
           for (let index = 0; index < moviesData.length; index++) {
             const { data: user } = await axios({
               method: "GET",
-              url: "http://localhost:4001/users/" + moviesData[index].authorId,
+              url: process.env.USER_SERVICE_URL + "/users/" + moviesData[index].authorId,
             });
             moviesData[index].author = user.data;
             moviesData[index].genre = moviesData[index].Genre;
@@ -109,11 +108,11 @@ const resolvers = {
         const { id } = args;
         const { data: movieData } = await axios({
           method: "GET",
-          url: "http://localhost:4002/movies/" + id,
+          url: process.env.APP_SERVICE_URL + "/movies/" + id,
         });
         const { data: user } = await axios({
           method: "GET",
-          url: "http://localhost:4001/users/" + movieData.authorId,
+          url: process.env.USER_SERVICE_URL + "/users/" + movieData.authorId,
         });
         movieData.author = user.data;
         movieData.genre = movieData.Genre;
@@ -130,7 +129,7 @@ const resolvers = {
         const { input } = args;
         const { data } = await axios({
           method: "POST",
-          url: "http://localhost:4002/movies/add",
+          url: process.env.APP_SERVICE_URL + "/movies/add",
           data: input,
         });
         console.log(input.trailerUrl);
@@ -146,7 +145,7 @@ const resolvers = {
         const { id, input } = args;
         const { data } = await axios({
           method: "PUT",
-          url: "http://localhost:4002/movies/" + id,
+          url: process.env.APP_SERVICE_URL + "/movies/" + id,
           data: input,
         });
         console.log(data);
@@ -162,7 +161,7 @@ const resolvers = {
         const { id } = args;
         const { data } = await axios({
           method: "DELETE",
-          url: "http://localhost:4002/movies/" + id,
+          url: process.env.APP_SERVICE_URL + "/movies/" + id,
         });
         await redis.del("app:movies_graphql");
         return data;

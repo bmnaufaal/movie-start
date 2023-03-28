@@ -278,7 +278,7 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "start": "node ./bin/www.js",
+    "start": "nodemon ./bin/www.js",
     "dev": "nodemon ./bin/www.js 4002",
     "reset-db": "sequelize db:drop && sequelize db:create && sequelize db:migrate",
     "reset-db-seed": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all"

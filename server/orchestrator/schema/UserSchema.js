@@ -51,11 +51,11 @@ const resolvers = {
         const userCache = await redis.get("app:users_graphql");
         if (userCache) {
           console.log(JSON.parse(userCache));
-          res.json(JSON.parse(userCache));
+          return JSON.parse(userCache);
         } else {
           const { data: usersData } = await axios({
             method: "GET",
-            url: "http://localhost:4001/users",
+            url: process.env.USER_SERVICE_URL + "/users",
           });
           await redis.set("app:users_graphql", JSON.stringify(usersData.data));
           return usersData.data;
@@ -69,7 +69,7 @@ const resolvers = {
         const { id } = args;
         const { data: userData } = await axios({
           method: "GET",
-          url: "http://localhost:4001/users/" + id,
+          url: process.env.USER_SERVICE_URL + "/users/" + id,
         });
         return userData.data;
       } catch (error) {
@@ -83,7 +83,7 @@ const resolvers = {
         const { input } = args;
         const { data } = await axios({
           method: "POST",
-          url: "http://localhost:4001/users/create",
+          url: process.env.USER_SERVICE_URL + "/users/create",
           data: input,
         });
         await redis.del("app:users_graphql");
@@ -98,7 +98,7 @@ const resolvers = {
         const { id } = args;
         const { data } = await axios({
           method: "DELETE",
-          url: "http://localhost:4001/users/" + id,
+          url: process.env.USER_SERVICE_URL + "/users/" + id,
         });
         await redis.del("app:users_graphql");
         return data;
