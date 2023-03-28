@@ -13,7 +13,7 @@ class UserController {
       } else {
         const { data: users } = await axios({
           method: "GET",
-          url: "http://localhost:4001/users",
+          url: process.env.USER_SERVICE_URL + "/users",
         });
         console.log(users.data);
         await redis.set("app:users", JSON.stringify(users.data));
@@ -28,9 +28,12 @@ class UserController {
   static async findOne(req, res) {
     try {
       const { id } = req.params;
-      const { data: user } = await axios("http://localhost:4001/users/" + id, {
-        method: "GET",
-      });
+      const { data: user } = await axios(
+        process.env.USER_SERVICE_URL + "/users/" + id,
+        {
+          method: "GET",
+        }
+      );
       console.log(user.data);
       res.json(user.data);
     } catch (error) {
@@ -43,7 +46,7 @@ class UserController {
       const { username, email, password, phoneNumber, address } = req.body;
       const { data } = await axios({
         method: "POST",
-        url: "http://localhost:4001/users/create",
+        url: process.env.USER_SERVICE_URL + "/users/create",
         data: {
           username,
           email,
@@ -65,7 +68,7 @@ class UserController {
       const { id } = req.params;
       const { data } = await axios({
         method: "DELETE",
-        url: "http://localhost:4001/users/" + id,
+        url: process.env.USER_SERVICE_URL + "/users/" + id,
       });
       await redis.del("app:users");
       res.json(data);
