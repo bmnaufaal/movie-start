@@ -4,18 +4,26 @@ services:
     container_name: app-service
     ports:
       - "4002:4002"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=${SUPABASE_URL}
   user-service:
     build: ./services/users
     container_name: user-service
-    ports: 
+    ports:
       - "4001:4001"
     environment:
-      - URL_MONGODB=mongodb://bmnaufaal:JWcwy46Myd352Vu1@ac-url9yul-shard-00-00.i2vm5c8.mongodb.net:27017,ac-url9yul-shard-00-01.i2vm5c8.mongodb.net:27017,ac-url9yul-shard-00-02.i2vm5c8.mongodb.net:27017/?ssl=true&replicaSet=atlas-uyjpn3-shard-0&authSource=admin&retryWrites=true&w=majority
+      - NODE_ENV=production
+      - URL_MONGODB=${URL_MONGODB}
   orchestrator:
     build: ./orchestrator
     container_name: orchestrator
-    ports: 
+    ports:
       - "4000:4000"
     environment:
-      - APP_SERVICE_URL=http://localhost:4002
-      - USER_SERVICE_URL=http://localhost:4001
+      - NODE_ENV=production
+      - APP_SERVICE_URL=${APP_SERVICE_URL}
+      - USER_SERVICE_URL=${USER_SERVICE_URL}
+      - PORT_REDIS = '19472'
+      - HOST_REDIS = 'redis-19472.c289.us-west-1-2.ec2.cloud.redislabs.com'
+      - PASS_REDIS = 'K8QKmwWDwSnFMXE6RjoYJLvAAdng8cWk'
